@@ -10,9 +10,13 @@ class Auth{
     }
     login(email){
         if(this.customers.find(customer => customer.email === email)){
-            return true;
-        }
-        else return null
+            const customer = this.customers.find(customer => customer.email === email);
+            return customer || null;
+        
     }
+    else return null;
+    
 }
+}
+
 module.exports = Auth;  // Export the Auth class
